@@ -4,7 +4,8 @@ $(document).ready(function () {
         url: "https://reqres.in/api/users",
         dataType: "JSON",
         success: function (response) {
-            $(response.data).each(function (id, val) {
+            let dataLength = response.data.slice(0,5)
+            $(dataLength).each(function (id, val) {
                 $("#userTable").append(`
                     <tr>
                         <td><input disabled type="text" class="form-control" value="${val.first_name}"></td>
